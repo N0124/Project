@@ -1,0 +1,11 @@
+{% if flat%}
+    <h3>Here are information about flat:</h3>
+    <ul>
+
+        <li> {{flat.description}}</li>
+        <li> <a href="{{flat.link}}">{{flat.link}}</a></li>
+
+    </ul>
+{% else %}
+    <h3> You dont have any flats</h3>
+{% endif %}

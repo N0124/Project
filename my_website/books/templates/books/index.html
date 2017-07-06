@@ -1,0 +1,10 @@
+{% if all_authors%}
+    <h3>Here are all my fav Authors:</h3>
+    <ul>
+        {%for author in all_authors%}
+        <li><a href="/books/{{ author.id}}/">{{ author.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3> You dont have any authors</h3>
+{% endif %}

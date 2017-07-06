@@ -1,0 +1,17 @@
+{% load el_pagination_tags %}
+{% paginate flats %}
+{%for flat in flats%}
+    <div class = "row">
+        <div class = 'col-md-2 photo'>
+            <img src="http://via.placeholder.com/120x120" class="img-circle">
+        </div>
+        <div class = 'col-md-10'>
+            <p>{{flat.description}}</p>
+            <hr>
+
+        </div>
+
+    </div>
+
+{% endfor %}
+{% show_more %}

@@ -1,0 +1,33 @@
+<style>
+    body{background: #FFE4C4;}
+</style>
+{% if flats%}
+    <h3>Here are all flats:</h3>
+    <ul>
+        {%for flat in flats%}
+        <li><a href="/rieltor/{{ flat.id}}/">{{ flat.area}}, {{flat.price}}</a></li>
+        {% endfor %}
+    </ul>
+<div class = 'pagination'>
+    <span class = 'step-links'>
+        {% if flats.has_previous %}
+            <a href="?page={{flats.previous_page_number}}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{flats.number}} of {{flats.paginator.num_pages}}.
+        </span>
+        {% if flats.has_next %}
+            <a href="?page={{flats.next_page_number}}">next</a>
+        {%endif%}
+    </span>
+</div>
+<br>
+    <form action="" method="get">
+        <input value="Add new stuff" onClick="location.href='add_new'" type="button"/>
+
+
+    </form>
+{% else %}
+    <h3> You dont have any flats</h3>
+{% endif %}
